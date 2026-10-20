@@ -1,0 +1,25 @@
+# Smolstore | E-Commerce Store
+
+A full stack online store for programmers and productivity fiends, with product listings, a shopping cart and secure Stripe checkout.
+
+**Tech stack:** Next.js, Stripe, FantaCSS
+
+## Getting started
+
+```bash
+npm install
+npm run dev
+```
+
+Create a `.env.local` file before running the store:
+
+```
+NEXT_PUBLIC_STRIPE_SECRET_KEY=your_stripe_secret_key
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
+## Credits
+
+Built by [Rahul JS (Rae)](https://github.com/Raejiii) as part of the [Full Stack Course](https://github.com/jamezmca/full-stack-course) by James McArthur ([Smoljames](https://www.smoljames.com)). The original course code and design are by James McArthur.
+
+**Connect:** [GitHub](https://github.com/Raejiii) · [LinkedIn](https://www.linkedin.com/in/rahul-joy-suneel-1b90ba300/) · [Email](mailto:rahuljsuneel@gmail.com)
