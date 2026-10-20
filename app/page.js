@@ -26,7 +26,9 @@ export default async function Home(props) {
 
 
     for (let product of products) {
-        if (product.name.toLowerCase().includes('planner')) {
+        // the featured product is the D&D character sheet (or a planner)
+        const lowerName = product.name.toLowerCase()
+        if (lowerName.includes('character sheet') || lowerName.includes('planner')) {
             planner = product
             continue
         }

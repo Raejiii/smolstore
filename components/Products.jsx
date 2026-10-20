@@ -44,16 +44,16 @@ export default function Products(props) {
             )}
             {planner && (<div className="section-container" id="planner">
                 <div className="section-header">
-                    <h2>Shop Our Selection</h2>
-                    <p>From organisation or accessorization</p>
+                    <h2>For Adventurers</h2>
+                    <p>A hand-drawn sheet for your next campaign</p>
                 </div>
 
                 <div className="planner-container">
                     <div>
                         <button onClick={() => {
-                            setPortalImage('med_res/planner.jpeg')
+                            setPortalImage('med_res/character_sheet.jpeg')
                         }} className="img-button">
-                            <img src="low_res/planner.jpeg" alt="high-res-planner" />
+                            <img src="low_res/character_sheet.jpeg" alt="Custom D&D character sheet" />
                         </button>
                     </div>
                     <div className="planner-info">
@@ -61,12 +61,12 @@ export default function Products(props) {
                             {planner.name}
                         </p>
                         <h3><span>$</span>{((planner.prices?.[0]?.unit_amount ?? 1499) / 100).toFixed(2)}</h3>
-                        <p>Step into a realm of fantasy and organization with our <strong>Medieval Dragon Month Planner</strong>! This high-resolution PNG asset combines the fierce elegance of dragons with intricate medieval designs to create a planner that's not only functional but also a work of art. Whether you&apos;re jotting down quests, planning battles, or just scheduling your weekly grocery run, this planner is your ultimate companion.</p>
+                        <p>Roll up your next hero on our <strong>Custom D&amp;D Character Sheet</strong>! This high-resolution printable sheet wraps every stat, skill and saving throw in ornate hand-drawn flourishes, so your character looks as legendary on paper as they do at the table.</p>
                         <ul>
-                            <li><strong>Epic Dragon Artwork:</strong> Stunning hand-drawn dragon motifs and medieval-inspired borders make every month feel legendary.
+                            <li><strong>Everything in one page:</strong> Ability scores, skills, saving throws, hit points, death saves, coin purses, weapons, spellcasting, traits and feats.
                             </li>
                             <li>
-                                <strong>Fully Printable:</strong> Designed at ultra-high resolution, it&apos;s perfect for printing on any size paper, from A4 to poster-sized displays.
+                                <strong>Fully Printable:</strong> Designed at high resolution, so it prints crisply on A4 or US Letter paper.
                             </li>
                         </ul>
                         <div className="purchase-btns">

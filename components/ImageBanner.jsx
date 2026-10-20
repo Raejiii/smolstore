@@ -32,7 +32,7 @@ export default function ImageBanner() {
                     </div>
                     <div>
                         <button onClick={() => scrollToSection('posters')}>Shop posters</button>
-                        <button onClick={() => scrollToSection('planner')}>Shop planner</button>
+                        <button onClick={() => scrollToSection('planner')}>Shop character sheet</button>
                     </div>
                 </div>
             </div>
