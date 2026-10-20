@@ -13,6 +13,10 @@ export default function ImageBanner() {
     }, [])
 
 
+    function scrollToSection(id) {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+
     return (
         <div className="banner-images">
             <img className="low-res-img" src="low_res/banner.jpeg" alt="banner-low-res" />
@@ -27,8 +31,8 @@ export default function ImageBanner() {
                         <h1>Rae's Smolstore</h1>
                     </div>
                     <div>
-                        <button>Shop stickers</button>
-                        <button>Shop planner</button>
+                        <button onClick={() => scrollToSection('posters')}>Shop posters</button>
+                        <button onClick={() => scrollToSection('planner')}>Shop planner</button>
                     </div>
                 </div>
             </div>

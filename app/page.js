@@ -23,7 +23,7 @@ export default async function Home(props) {
 
 
     for (let product of products) {
-        if (product.name === 'Medieval Dragon Month Planner') {
+        if (product.name.toLowerCase().includes('planner')) {
             planner = product
             continue
         }
