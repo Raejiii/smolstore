@@ -12,18 +12,18 @@ export default function Products(props) {
     const { handleIncrementProduct, cart } = useProducts()
     console.log(cart)
 
-    if (!stickers.length || !planner) { return null }
+    if (!stickers.length && !planner) { return null }
 
     return (
         <>
             {portalImage && (
                 <Portal handleClosePortal={() => { setPortalImage(null) }}>
                     <div className="portal-content">
-                        <img className="img-display" src={`med_res/${portalImage}.jpeg`} alt={`${portalImage}-high-res`} />
+                        <img className="img-display" src={portalImage} alt="product-high-res" />
                     </div>
                 </Portal>
             )}
-            <div className="section-container">
+            {planner && (<div className="section-container">
                 <div className="section-header">
                     <h2>Shop Our Selection</h2>
                     <p>From organisation or accessorization</p>
@@ -32,7 +32,7 @@ export default function Products(props) {
                 <div className="planner-container">
                     <div>
                         <button onClick={() => {
-                            setPortalImage('planner')
+                            setPortalImage('med_res/planner.jpeg')
                         }} className="img-button">
                             <img src="low_res/planner.jpeg" alt="high-res-planner" />
                         </button>
@@ -58,10 +58,10 @@ export default function Products(props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>)}
 
 
-            <div className="section-container">
+            {stickers.length > 0 && (<div className="section-container">
                 <div className="section-header">
                     <h2>Or Collect Your Favorite Tech</h2>
                     <p>Choose from our custom designed tech logos</p>
@@ -70,17 +70,19 @@ export default function Products(props) {
                     {stickers.map((sticker, stickerIndex) => {
                         const stickerName = sticker.name
                         const stickerImgUrl = sticker.name.replaceAll(' Sticker.png', '').replaceAll(' ', '_')
+                        const lowResSrc = sticker.images?.[0] || `low_res/${stickerImgUrl}.jpeg`
+                        const highResSrc = sticker.images?.[0] || `med_res/${stickerImgUrl}.jpeg`
                         return (
                             <div key={stickerIndex} className="sticker-card">
                                 <button onClick={() => {
-                                    setPortalImage(stickerImgUrl)
+                                    setPortalImage(highResSrc)
                                 }} className="img-button">
-                                    <img src={`low_res/${stickerImgUrl}.jpeg`} alt={`${stickerImgUrl}-low-res`} />
+                                    <img src={lowResSrc} alt={`${stickerImgUrl}-low-res`} />
                                 </button>
                                 <div className="sticker-info">
                                     <p className="text-medium">{stickerName}</p>
                                     <p>{sticker.description}</p>
-                                    <h4><span>$</span>{sticker.prices[0].unit_amount / 100}</h4>
+                                    <h4><span>$</span>{(sticker.prices[0]?.unit_amount ?? 0) / 100}</h4>
                                     <button onClick={() => {
                                         const stickerPriceId = sticker.default_price
                                         handleIncrementProduct(stickerPriceId, 1, sticker)
@@ -90,7 +92,7 @@ export default function Products(props) {
                         )
                     })}
                 </div>
-            </div>
+            </div>)}
         </>
     )
 }
