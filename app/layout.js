@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
               </div>
 
               <div className="socials">
-                <p>Built by <a href="https://github.com/Raejiii" target="_blank">Rahul JS (Rae)</a> as part of the Full Stack Course by James McArthur (Smoljames)<br />Built with NextJS & <a target="_blank" href="https://www.fantacss.smoljames.com">FantaCSS</a> 🔥</p>
+                <p>Built by <a href="https://github.com/Raejiii" target="_blank">Rahul JS (Rae)</a><br />Built with NextJS & <a target="_blank" href="https://www.fantacss.smoljames.com">FantaCSS</a> 🔥</p>
                 <div className="social-links">
                   <Link href={'https://github.com/Raejiii'} target="_blank"><i className="fa-brands fa-github"></i></Link>
                   <Link href={'https://www.linkedin.com/in/rahul-joy-suneel-1b90ba300/'} target="_blank"><i className="fa-brands fa-linkedin"></i></Link>
