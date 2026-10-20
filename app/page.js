@@ -1,6 +1,9 @@
 import ImageBanner from "@/components/ImageBanner";
 import Products from "@/components/Products";
 
+// fetch products from Stripe on every request so catalogue changes show up immediately
+export const dynamic = 'force-dynamic'
+
 export async function getProducts() {
     try {
 
